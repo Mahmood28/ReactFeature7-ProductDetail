@@ -1,7 +1,8 @@
 import { DetailWrapper } from "../styles";
-
+import DeleteButton from "./buttons/DeleteButton";
 const ProductDetail = (props) => {
   const product = props.product;
+  const deleteProduct = props.deleteProduct;
   return (
     <DetailWrapper>
       <h1>{product.name}</h1>
@@ -11,6 +12,7 @@ const ProductDetail = (props) => {
       <button onClick={() => props.setProduct(null)}>
         return to list view
       </button>
+      <DeleteButton deleteProduct={deleteProduct} product={product} />
     </DetailWrapper>
   );
 };
